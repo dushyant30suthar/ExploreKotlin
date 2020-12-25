@@ -64,6 +64,11 @@ fun main(args: Array<String>) {
                 We can replace curly brances with just $a for single 
                 variable/value reference."""
 
+    /*
+    * We can use == as equal function of java. It compares values rather than references.
+    * For comparing references we can make use of === and !==*/
+    val stringTwo = "Another string"
+
 
     /*
     * E denotes 10 to the power. It's by default double.
@@ -85,6 +90,11 @@ fun main(args: Array<String>) {
     * These statements are just assignments rather than expressions.
     * We can not use it like a = b = c like in java.*/
     a *= 10
+
+    /*
+    * We can not use equity operators with different types such as numeric types, chars and boolean. It means we can use <> kind of
+    * operators but not == and !=*/
+    a > b
 
     /*
     * Result of division of two Int values is also int. As it round off to 0.
@@ -126,6 +136,10 @@ fun main(args: Array<String>) {
     }
 
     val array3 = emptyArray<Any>()
+
+    /*
+    * Using == on arrays compares reference rather than values. Use contentEquals instead.*/
+    array2 == array3
 
     /*
     * Type inferred on compile time.*/
