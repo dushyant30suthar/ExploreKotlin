@@ -76,6 +76,16 @@ fun main(args: Array<String>) {
     a *= 10
 
     /*
+    * Result of division of two Int values is also int. As it round off to 0.
+    * It will not round off in case of float values.
+    * This applies to both division and modulus */
+    a = 7 / 4
+
+    /*
+    * Sign of resultant value is derived from numerator. */
+    floatNumber = (-6.5f) % (-2.5f)
+
+    /*
     * Kotlin supports Hex(0x) and Binary(0b) not octal. Apart from that, no integer literal,
     * except zero, 0 can be the first digit.*/
     a = 0x00
