@@ -32,6 +32,11 @@ fun main(args: Array<String>) {
     * Characters are taken as unicode decimal values.*/
     val g: Char = 'a'
 
+    /*
+    * We can perform binary +/- on char types and it will
+    * operate on unicode decimal. It points to b now.*/
+    var good = g + 1
+
     val h: Boolean
 
     /*
