@@ -71,6 +71,11 @@ fun main(args: Array<String>) {
     a = +b
 
     /*
+    * These statements are just assignments rather than expressions.
+    * We can not use it like a = b = c like in java.*/
+    a *= 10
+
+    /*
     * Kotlin supports Hex(0x) and Binary(0b) not octal. Apart from that, no integer literal,
     * except zero, 0 can be the first digit.*/
     a = 0x00
