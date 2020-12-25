@@ -8,6 +8,13 @@ fun main(args: Array<String>) {
     * By default integer literal assigned to Int type. We have specify for Byte and Short. */
     var b: Byte = 2
 
+    var bc = b
+
+    print(++bc)
+
+    print(b)
+
+
     /*
     * As we know, integer literals are by default inferred to Int. If we want to make it Long.
     * We can just put L after the literal.
@@ -58,6 +65,10 @@ fun main(args: Array<String>) {
     * This will pick up last byte(Least significant 8 bits) of the data given, will truncate
     * all other than that. Last byte would be taken with MSB (signed)*/
     print(a.toByte())
+
+    /*
+    * Unary operation on Byte and Short changes it to Int. */
+    a = +b
 
     /*
     * Kotlin supports Hex(0x) and Binary(0b) not octal. Apart from that, no integer literal,
