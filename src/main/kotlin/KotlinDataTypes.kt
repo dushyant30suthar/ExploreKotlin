@@ -6,9 +6,9 @@ fun main(args: Array<String>) {
     var a = 945
     /*
     * By default integer literal assigned to Int type. We have specify for Byte and Short. */
-    var b: Byte = 2
+    var b: Byte? = 2
 
-    var bc = b
+    var bc = b!!
 
     print(++bc)
 
@@ -37,6 +37,12 @@ fun main(args: Array<String>) {
     * operate on unicode decimal. It points to b now.*/
     var good = g + 1
 
+    /*
+    * and / or
+    * are different than
+    * && / ||
+    *
+    * Later one are lazy.*/
     val h: Boolean
 
     /*
