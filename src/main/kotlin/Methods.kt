@@ -6,25 +6,34 @@ fun main(args: Array<String>) {
     * Positional arguments :
     *
     * Calling method by directly passing the values.*/
-    method1(1, 2.8F, 3)
+    method1(1, 2.8F, 3, 4, 4, 4, 3)
+
+    /*
+    * Or we can pass values with array this way. Using spread operator */
+    method1(1, 2F, *byteArrayOf(1, 2))
 
     /*
     * Named arguments :
     *
     * Calling method by using name of the argument names.
     *
-    *By using this way we can put values in any orders.*/
-    method1(secondArgument = 1.2F, firstArgument = 1, thirdArgument = 4)
+    *By using this way we can put values in any orders.
+    *
+    * we can not put comma separated values if we are using named parameters.
+    *
+    * We have to be using array with spread operator*/
+    method1(secondArgument = 1.2F, firstArgument = 1, thirdArgument = *byteArrayOf(1, 2))
 
     /*
     * We can even mix positional arguments with named arguments.
     * But once we use named arguments, we got to use named arguments after that.*/
-    method1(1, thirdArgument = 2, secondArgument = 1.3F)
+    method1(1, thirdArgument = *byteArrayOf(1, 2), secondArgument = 1.3F)
 
     /*
     * This method doesn't pass the value to thirdArgument hence the default value
-    * would be used. */
+    * would be used. Here, varargs have empty array as default value.*/
     method1(1, 2F)
+
 }
 
 /*
@@ -42,8 +51,11 @@ fun main(args: Array<String>) {
 * Not aware about the custom objects which we will see later.
 *
 * We can add default value to the arguments. It is optional. Either we can put the value or just leave it.
+*
+* varargs have empty array as default values.
+* You can put n number of values to it.
 * */
-fun method1(firstArgument: Int, secondArgument: Float, thirdArgument: Byte = 5): Int {
+fun method1(firstArgument: Int, secondArgument: Float, vararg thirdArgument: Byte): Int {
     return 1
     /*
     * It's okay to have some code after return. It will not execute.*/
