@@ -1,4 +1,7 @@
 fun main(args: Array<String>) {
+
+    /*All these call to same method. */
+
     /*
     * Positional arguments :
     *
@@ -17,6 +20,11 @@ fun main(args: Array<String>) {
     * We can even mix positional arguments with named arguments.
     * But once we use named arguments, we got to use named arguments after that.*/
     method1(1, thirdArgument = 2, secondArgument = 1.3F)
+
+    /*
+    * This method doesn't pass the value to thirdArgument hence the default value
+    * would be used. */
+    method1(1, 2F)
 }
 
 /*
@@ -32,8 +40,10 @@ fun main(args: Array<String>) {
 * using reference(obviously) would have impact on the value that we have in our function.
 *
 * Not aware about the custom objects which we will see later.
+*
+* We can add default value to the arguments. It is optional. Either we can put the value or just leave it.
 * */
-fun method1(firstArgument: Int, secondArgument: Float, thirdArgument: Byte): Int {
+fun method1(firstArgument: Int, secondArgument: Float, thirdArgument: Byte = 5): Int {
     return 1
     /*
     * It's okay to have some code after return. It will not execute.*/
