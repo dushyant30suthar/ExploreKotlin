@@ -34,6 +34,14 @@ fun main(args: Array<String>) {
     * would be used. Here, varargs have empty array as default value.*/
     method1(1, 2F)
 
+    /*
+    * */
+    method2(1, 2, 3)
+    method2()
+
+    /*
+    * When varargs are used before default ones. We would have to use named parameters with either or both of the parameters. */
+    method3(firstArgument = intArrayOf(1, 2), 345)
 }
 
 /*
@@ -60,4 +68,14 @@ fun method1(firstArgument: Int, secondArgument: Float, vararg thirdArgument: Byt
     /*
     * It's okay to have some code after return. It will not execute.*/
     val a = 1
+}
+
+/*
+* Varargs do not mix well with default arguments. Thus it's always recommended to use varargs after default ones.*/
+fun method2(firstArgument: Int = 5, vararg secondArgument: Int) {
+
+}
+
+fun method3(vararg firstArgument: Int, secondArgument: Int = 5) {
+
 }
