@@ -3,7 +3,7 @@ fun main(args: Array<String>) {
     * Positional arguments :
     *
     * Calling method by directly passing the values.*/
-    method1(1, 2.8F)
+    method1(1, 2.8F, 3)
 
     /*
     * Named arguments :
@@ -11,7 +11,12 @@ fun main(args: Array<String>) {
     * Calling method by using name of the argument names.
     *
     *By using this way we can put values in any orders.*/
-    method1(secondArgument = 1.2F, firstArgument = 1)
+    method1(secondArgument = 1.2F, firstArgument = 1, thirdArgument = 4)
+
+    /*
+    * We can even mix positional arguments with named arguments.
+    * But once we use named arguments, we got to use named arguments after that.*/
+    method1(1, thirdArgument = 2, secondArgument = 1.3F)
 }
 
 /*
@@ -28,7 +33,7 @@ fun main(args: Array<String>) {
 *
 * Not aware about the custom objects which we will see later.
 * */
-fun method1(firstArgument: Int, secondArgument: Float): Int {
+fun method1(firstArgument: Int, secondArgument: Float, thirdArgument: Byte): Int {
     return 1
     /*
     * It's okay to have some code after return. It will not execute.*/
