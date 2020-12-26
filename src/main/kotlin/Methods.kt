@@ -42,6 +42,23 @@ fun main(args: Array<String>) {
     /*
     * When varargs are used before default ones. We would have to use named parameters with either or both of the parameters. */
     method3(firstArgument = intArrayOf(1, 2), 345)
+
+    /*
+    * So method with specific type is called not the one with it's super type.
+    * */
+    method4(4, "Some name here.")
+
+    /*
+    * If we want to call the super type one then we would have to type cast it to super one.*/
+    method4(4, "Some string" as Any)
+
+    /*
+    * In this call method with default argument has been found specific rather than the one with varargs.*/
+    method4(4, "Some string", 4)
+
+    /*
+    * This call is obviously passed to one with vararg.*/
+    method4(4, "Some String", 4, 4)
 }
 
 /*
@@ -77,5 +94,31 @@ fun method2(firstArgument: Int = 5, vararg secondArgument: Int) {
 }
 
 fun method3(vararg firstArgument: Int, secondArgument: Int = 5) {
+
+}
+
+/*
+* Simple and straightforward methods are always considered as more specific.
+*
+* If this method is overloaded(another method existed) with default parameters or varargs then it has been a method
+* to go.*/
+fun method4(firstArgument: Int, secondArgument: String) {
+
+}
+
+/*
+* This method is considered less specific than of upper one*/
+fun method4(firstArgument: Int, secondArgument: String, thirdArgument: Int = 5) {
+
+}
+
+fun method4(firstArgument: Int, secondArgument: String, vararg thirdArgument: Int) {
+
+}
+
+
+/*
+* Super types makes method to be less specific.*/
+fun method4(firstArgument: Int, secondArgument: Any) {
 
 }
