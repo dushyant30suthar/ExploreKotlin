@@ -27,6 +27,24 @@ fun main(args: Array<String>) {
     method1(1, 2F)
 }
 
+fun method3() {
+
+}
+
+fun method2(): Int {
+    return 1
+}
+
+fun method4(): Int = 1 + 2
+
+/*
+* Here return type is inferred by the returned values.*/
+fun method5() = 1 + 6
+
+/*
+* Adding braces here makes it lamda. Basically an another function.*/
+fun method6() = { 1 + 3 }
+
 /*
 * A Typical method.
 *
@@ -49,3 +67,8 @@ fun method1(firstArgument: Int, secondArgument: Float, thirdArgument: Byte = 5):
     * It's okay to have some code after return. It will not execute.*/
     val a = 1
 }
+
+
+
+
+
