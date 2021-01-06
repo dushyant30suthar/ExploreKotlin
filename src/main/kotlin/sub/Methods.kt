@@ -1,3 +1,17 @@
+/*
+* If there is no package name compiler assumes that file belongs to
+* default root package and it has empty name.*/
+
+/*
+* This file actually doesn't belong to the package that we just have specified.
+* Even though it's valid kotlin.
+*
+* Basically this means, source file resides in this directory but belongs to
+* specified package.
+*
+* But it is recommended to follow tree structure same as java.*/
+package sub.something
+
 fun main(args: Array<String>) {
 
     /*All these call to same method. */
