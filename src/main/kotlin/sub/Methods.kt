@@ -12,7 +12,32 @@
 * But it is recommended to follow tree structure same as java.*/
 package sub.something
 
+/*
+* Both of the files contain method which has same name.
+* But to avoid this ambiguity we can use as keyword
+*
+* Now we will identify that method with the field we add here. */
+
+/*
+* Here both of the files contains a method with same name.
+*
+* This is specified import*/
+/*
+* This line represents on demand imports*/
+import sub.something.something as something1
+import sub.something2.something as something2
+
 fun main(args: Array<String>) {
+
+    /*
+    * Both of the methods are called by using their aliases we gave at the time of import.*/
+    something1()
+    something2()
+
+    /*
+    * This method is present in both of the packages but it is referred without
+    * ambiguity because specific imports have higher priority than of on demand imports*/
+    commonMethod()
 
     /*All these call to same method. */
 
