@@ -42,10 +42,34 @@ fun main(args: Array<String>) {
 * Not aware about the custom objects which we will see later.
 *
 * We can add default value to the arguments. It is optional. Either we can put the value or just leave it.
+*
+* By default methods are public. Thus no use of adding public visibility modifier.
 * */
-fun method1(firstArgument: Int, secondArgument: Float, thirdArgument: Byte = 5): Int {
+public fun method1(firstArgument: Int, secondArgument: Float, thirdArgument: Byte = 5): Int {
+    /*
+    * We can define a method in a method.*/
+    fun subMethod() {
+        /*
+        * We can access arguments of enclosing method.*/
+        firstArgument
+    }
+    subMethod()
     return 1
     /*
     * It's okay to have some code after return. It will not execute.*/
     val a = 1
+}
+
+/*
+* We can make method only be accessible in containing file by using private visibility modifier. */
+private fun method2() {
+
+}
+
+
+/*
+* By using internal visibility modifier we allow this method to be accessible by containing module(A kotlin module is group of
+* files which are compiled together. It varies by build system you use)*/
+internal fun method3() {
+
 }
