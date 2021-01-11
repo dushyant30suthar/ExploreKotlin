@@ -10,4 +10,36 @@ fun main(args: Array<String>) {
     while (true) {
 
     }
+
+    /*
+    * Typical for loop*/
+    for (a in 1..100) {
+
+    }
+
+    /*
+    * can't change value but assign a type*/
+    for (a: Int in intArrayOf(1, 2, 3)) {
+
+    }
+
+    for (a in 0..intArrayOf(1, 2, 3).lastIndex) {
+
+    }
+
+    for (a: Int in 0..intArrayOf(1, 2, 3).lastIndex step 2) {
+
+    }
+
+    /*
+    * Strings and array have indices property*/
+    for (a: Int in intArrayOf(1, 2, 3).indices) {
+
+    }
+
+    /*
+    * Can perform on string*/
+    for (c in "dushyant") {
+
+    }
 }
