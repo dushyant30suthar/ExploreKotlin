@@ -48,4 +48,16 @@ fun main(args: Array<String>) {
 
     /*
     * break and continue are prohibited in when statements*/
+
+
+    /*
+    * Nested loops
+    * use break and continue */
+    outerLoop@ for (i in 1..10) {
+        for (j in 1..10) {
+            continue@outerLoop
+            /*
+            * By using this lable we can use break and continue even with when statements*/
+        }
+    }
 }
