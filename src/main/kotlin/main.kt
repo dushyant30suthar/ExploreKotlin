@@ -42,4 +42,10 @@ fun main(args: Array<String>) {
     for (c in "dushyant") {
 
     }
+
+    /*
+    * break and continue servers the same purpose as java*/
+
+    /*
+    * break and continue are prohibited in when statements*/
 }
