@@ -15,4 +15,20 @@ fun main(args: Array<String>) {
         else -> true
     }
 
+    val a = 5
+    /*
+    * Subjecting a field to when.
+    * It is known as subject expression. */
+    val c = when (a) {
+        5 -> "Five"
+        6 -> "Six"
+        else -> "Don't know what it is"
+    }
+
+    val d = when (val a = readLine()!!.toInt()) {
+        5 -> "Five"
+        6 -> "Six"
+        else -> "Don't know what it is"
+    }
+
 }
