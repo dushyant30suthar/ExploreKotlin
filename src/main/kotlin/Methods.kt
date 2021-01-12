@@ -68,7 +68,25 @@ fun method1(firstArgument: Int, secondArgument: Float, thirdArgument: Byte = 5):
     val a = 1
 }
 
+/*
+* Compiler optimises for it. Like compiler would convert this method into non recusive
+* method in fact it would change the code in that way.
+*
+* To be able to have such transformation. The condition is to not to have any action after the
+* recursive call.
+*
+* Otherwise it would be accounted as recursive. */
+tailrec fun method9() {
 
+    /*
+    * Not the ideal code but some logic which could be optimized to non recursive function*/
+    return method9()
+}
+
+
+tailrec fun method10() {
+    return
+}
 
 
 
