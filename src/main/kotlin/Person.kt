@@ -13,7 +13,23 @@ file.
 * Doesn't have body like functions/methods.
 * It's intended to have set of property initializers
 * as well as init blocks*/
+
+/*
+* Primary constructor parameters could not be used outside
+* property initializers and init blocks. Not accessible
+* by it's methods. */
+
+/*
+* We can do this by using class properties holding values
+* that parameters received in primary constructor.*/
 class Person(firstName : String, lastName : String) {
+    /*
+    * Class properties must be initialized in kotlin classes.
+    *
+    * If compiler could not ensure this or an exception
+    * then it throws compile time error.*/
+
+
     var firstName: String = firstName
     var lastName: String = lastName
     val age: Int = 0
