@@ -30,47 +30,9 @@ file.
 * we want.*/
 class Person(private val firstName: String, private val lastName: String) {
     /*
-    * Class properties must be initialized in kotlin classes.
-    *
-    * If compiler could not ensure this or an exception
-    * then it throws compile time error.*/
-
-
-    val age: Int = 0
-
-    init {
-        print(
-            "These statements are called everytime" +
-                    "when primary constructors are called."
-        )
-
-        print(
-            firstName + "This is considered as constructor " +
-                    "parameter in init blocks or property initializers" +
-                    "Otherwise it is considered as class property"
-        )
-    }
-
-    init {
-        print("They could be multiple in numbers and their " +
-                "execution would be in sequence of their" +
-                "defination. These statements do not have " +
-                "return statements")
-    }
-
-    init {
-        /*
-        * Sometimes initialization of properties could be
-        * complex and can't be fit into single statement
-        * thus their initialization is allowed in
-        * init blocks.*/
-
-    }
-
-    fun method1()
-    {}
+    * By using val and var in constructor parameter.
+    * We can omit non trivial members and empty body.*/
 }
-
 fun main(args: Array<String>) {
     val person = Person("Dushyant","Suthar")
 }
