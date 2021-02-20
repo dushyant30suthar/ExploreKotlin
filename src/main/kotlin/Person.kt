@@ -28,7 +28,11 @@ file.
 * the parameters
 * this way they would become class properties and we can use as
 * we want.*/
-class Person(private val firstName: String, private val lastName: String)
+
+/*
+* We can also define varargs and default values to the constructor
+* parameters.*/
+class Person(private vararg val firstName: String, private val lastName: String = "Dushyant")
 /*
 * By using val and var in constructor parameter.
 * We can omit non trivial members and empty body.*/
