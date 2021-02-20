@@ -7,7 +7,14 @@ We can define multiple public classes in single
 file.
 * */
 
-class Person {
+/*
+* If we have primary constructors and secondary constructors as well
+* then each constructor must delegate call to primary constructor
+* or they all can delegate call to a common secondary constructor.
+*
+* It's mandatory for all to delegate call to the same constructor*/
+
+class Person() {
     /*
     * We can not add val or vars for secondary constructor
     * parameters*/
@@ -25,16 +32,23 @@ class Person {
     private val lastName: String
 
     /*
+    * When we all of the constructors are delegating to primary
+    * constructor then we initialize things in init block or property
+    * initializers*/
+    init {
+        firstName = "Dushyant"
+        lastName = "Suthar"
+    }
+
+    /*
     * We can call other constructor from one constructor
     * by using delegation. That's another way of doing
     * common initialization we would just call a particular
     * constructor for before every constructor. */
     constructor(firstName: String, lastName: String) :
-            this(firstName + lastName)
+            this()
 
-    constructor(fullName: String) {
-        this.firstName = fullName.split(" ")[0]
-        this.lastName = fullName.split(" ")[1]
+    constructor(fullName: String) : this() {
     }
 }
 fun main(args: Array<String>) {
