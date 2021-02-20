@@ -28,11 +28,15 @@ file.
 * the parameters
 * this way they would become class properties and we can use as
 * we want.*/
-class Person(private val firstName: String, private val lastName: String) {
-    /*
-    * By using val and var in constructor parameter.
-    * We can omit non trivial members and empty body.*/
-}
+class Person(private val firstName: String, private val lastName: String)
+/*
+* By using val and var in constructor parameter.
+* We can omit non trivial members and empty body.*/
+
+/*
+* We can remove class body as well if we define val or var in constructor
+* parameters*/
+
 fun main(args: Array<String>) {
-    val person = Person("Dushyant","Suthar")
+    val person = Person("Dushyant", "Suthar")
 }
