@@ -14,7 +14,19 @@ file.
 *
 * It's mandatory for all to delegate call to the same constructor*/
 
-class Person() {
+/*
+* We can add visibility parameters to class properties and methods
+* along with arguments parameters of primary constructor but not
+* parameters of secondary constructors.
+*
+* Also we can add visibility to primary constructor and second
+* constructors.
+*
+* For primary constructor we have add constructor keyword in primary
+* constructor also.
+* */
+
+class Person private constructor() {
     /*
     * We can not add val or vars for secondary constructor
     * parameters*/
@@ -46,12 +58,12 @@ class Person() {
     * common initialization we would just call a particular
     * constructor for before every constructor. It's just about
     * initializing things. */
-    constructor(firstName: String, lastName: String) :
+    private constructor(firstName: String, lastName: String) :
             this()
 
     constructor(fullName: String) : this() {
     }
 }
 fun main(args: Array<String>) {
-    val person = Person("Dushyant", "Suthar")
+    val person = Person("Dushyant")
 }
