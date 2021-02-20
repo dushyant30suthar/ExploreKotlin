@@ -44,7 +44,8 @@ class Person() {
     * We can call other constructor from one constructor
     * by using delegation. That's another way of doing
     * common initialization we would just call a particular
-    * constructor for before every constructor. */
+    * constructor for before every constructor. It's just about
+    * initializing things. */
     constructor(firstName: String, lastName: String) :
             this()
 
