@@ -22,7 +22,13 @@ file.
 /*
 * We can do this by using class properties holding values
 * that parameters received in primary constructor.*/
-class Person(firstName : String, lastName : String) {
+
+/*
+* To do this there's more simpler way we can add val or var to
+* the parameters
+* this way they would become class properties and we can use as
+* we want.*/
+class Person(private val firstName: String, private val lastName: String) {
     /*
     * Class properties must be initialized in kotlin classes.
     *
@@ -30,13 +36,19 @@ class Person(firstName : String, lastName : String) {
     * then it throws compile time error.*/
 
 
-    var firstName: String = firstName
-    var lastName: String = lastName
     val age: Int = 0
 
     init {
-        print("These statements are called everytime" +
-                "when primary constructors are called.")
+        print(
+            "These statements are called everytime" +
+                    "when primary constructors are called."
+        )
+
+        print(
+            firstName + "This is considered as constructor " +
+                    "parameter in init blocks or property initializers" +
+                    "Otherwise it is considered as class property"
+        )
     }
 
     init {
@@ -53,8 +65,6 @@ class Person(firstName : String, lastName : String) {
         * thus their initialization is allowed in
         * init blocks.*/
 
-        this.firstName = firstName
-        this.lastName = lastName
     }
 
     fun method1()
