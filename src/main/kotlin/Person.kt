@@ -7,40 +7,36 @@ We can define multiple public classes in single
 file.
 * */
 
-/*
-* Here's a class with primary constructor.
-*
-* Doesn't have body like functions/methods.
-* It's intended to have set of property initializers
-* as well as init blocks*/
+class Person {
+    /*
+    * We can not add val or vars for secondary constructor
+    * parameters*/
 
-/*
-* Primary constructor parameters could not be used outside
-* property initializers and init blocks. Not accessible
-* by it's methods. */
+    /*
+    * Secondary constructors return Unit-typed value, thus we
+    * can use return statement in body opposed to init blocks */
 
-/*
-* We can do this by using class properties holding values
-* that parameters received in primary constructor.*/
+    /*
+    * If class doesn't have primary constructor then every secondary
+    * constructor calls init blocks in their sequence. Before executing its
+    * own body this ensures common initialization.*/
 
-/*
-* To do this there's more simpler way we can add val or var to
-* the parameters
-* this way they would become class properties and we can use as
-* we want.*/
+    private val firstName: String
+    private val lastName: String
 
-/*
-* We can also define varargs and default values to the constructor
-* parameters.*/
-class Person(private vararg val firstName: String, private val lastName: String = "Dushyant")
-/*
-* By using val and var in constructor parameter.
-* We can omit non trivial members and empty body.*/
+    /*
+    * We can call other constructor from one constructor
+    * by using delegation. That's another way of doing
+    * common initialization we would just call a particular
+    * constructor for before every constructor. */
+    constructor(firstName: String, lastName: String) :
+            this(firstName + lastName)
 
-/*
-* We can remove class body as well if we define val or var in constructor
-* parameters*/
-
+    constructor(fullName: String) {
+        this.firstName = fullName.split(" ")[0]
+        this.lastName = fullName.split(" ")[1]
+    }
+}
 fun main(args: Array<String>) {
     val person = Person("Dushyant", "Suthar")
 }
