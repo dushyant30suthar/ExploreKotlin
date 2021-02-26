@@ -26,7 +26,7 @@ file.
 * constructor also.
 * */
 
-class Person private constructor() {
+class Person(val id: Id) {
     /*
     * We can not add val or vars for secondary constructor
     * parameters*/
@@ -58,12 +58,42 @@ class Person private constructor() {
     * common initialization we would just call a particular
     * constructor for before every constructor. It's just about
     * initializing things. */
-    private constructor(firstName: String, lastName: String) :
-            this()
+    private constructor(firstName: String, lastName: String)
 
-    constructor(fullName: String) : this() {
+    constructor(fullName: String) : this(fullName.split(" ")[0], fullName.split(" ")[1]) {
     }
+
+    /*
+    * Not inner class, static counterpart of Java
+    *
+    * Can access private members of the outer class. */
+    class Id(color: String, eyes: String) {
+        private val person = Person("Dushyant Suthar")
+
+        /*
+        * Able to access private members of outer class through
+        * object only can not access members of outer class
+        * directly. */
+        private val something = person
+    }
+
+    /*
+    * To make this class access members of outer class directly
+    *
+    * we just need to add inner keyword*/
+    inner class Id2(color: String, eyes: String) {
+        private val person = Person("Dushyant Suthar")
+
+        /*
+        * Directly accessing the members of outer class without
+        * object.*/
+        private val something = firstName;
+    }
+
+
 }
 fun main(args: Array<String>) {
-    val person = Person("Dushyant")
+    /*
+    * References to the inner classes */
+    val person = Person(Person.Id("Brown", "Black"))
 }
