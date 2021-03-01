@@ -96,4 +96,8 @@ fun main(args: Array<String>) {
     /*
     * References to the inner classes */
     val person = Person(Person.Id("Brown", "Black"))
+
+    /*
+    * inner classes are instantiated using object of outer class*/
+    person.Id2("Brown", "Black")
 }
