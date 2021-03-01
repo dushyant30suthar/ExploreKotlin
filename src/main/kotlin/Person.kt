@@ -75,6 +75,12 @@ class Person(val id: Id) {
         * object only can not access members of outer class
         * directly. */
         private val something = person
+
+        init {
+            /*we can not do this in nested class*/
+            /*this@Person*/
+        }
+
     }
 
     /*
@@ -88,6 +94,10 @@ class Person(val id: Id) {
         * Directly accessing the members of outer class without
         * object.*/
         private val something = firstName;
+
+        init {
+            this@Person
+        }
     }
 
 
