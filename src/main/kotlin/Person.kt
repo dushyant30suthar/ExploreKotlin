@@ -94,7 +94,8 @@ class Person(val id: Id) {
 }
 fun main(args: Array<String>) {
     /*
-    * References to the inner classes */
+    * References to the inner classes, basically static counterpart
+    * to java */
     val person = Person(Person.Id("Brown", "Black"))
 
     /*
