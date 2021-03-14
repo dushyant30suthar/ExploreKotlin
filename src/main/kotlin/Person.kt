@@ -53,22 +53,11 @@ class Person(val id: Id) {
     }
 
     /*
-    * We can call other constructor from one constructor
-    * by using delegation. That's another way of doing
-    * common initialization we would just call a particular
-    * constructor for before every constructor. It's just about
-    * initializing things. */
-    private constructor(firstName: String, lastName: String)
-
-    constructor(fullName: String) : this(fullName.split(" ")[0], fullName.split(" ")[1]) {
-    }
-
-    /*
     * Not inner class, static counterpart of Java
     *
     * Can access private members of the outer class. */
     class Id(color: String, eyes: String) {
-        private val person = Person("Dushyant Suthar")
+        private val person = Person(Id("black","brown"))
 
         /*
         * Able to access private members of outer class through
@@ -88,7 +77,7 @@ class Person(val id: Id) {
     *
     * we just need to add inner keyword*/
     inner class Id2(color: String, eyes: String) {
-        private val person = Person("Dushyant Suthar")
+        private val person = Person(Id("Brown", "Brown"))
 
         /*
         * Directly accessing the members of outer class without
