@@ -7,6 +7,10 @@
 *
 * We can directly import members of object. But we can not import all of the members at once using **/
 
+/*
+* Kotlin has topLevel declarations which means we can directly import functions thus we do not have to
+* use Utility classes as we use in Java.*/
+
 object Application {
     val name = "My Application"
 
