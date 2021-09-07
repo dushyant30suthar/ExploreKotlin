@@ -31,8 +31,10 @@ object Application {
         /*
         * We can not make them inner as they would depend on outside context.
         *
-        * Inner class would be the thing that we might want to use.*/
-        companion object InnerObject {
+        * Inner class would be the thing that we might want to use.
+        *
+        * It is recommended to not to use name of companion object as only one is allowed per class.*/
+        companion object {
             fun create(name: String): InnerClassOfObject {
                 return InnerClassOfObject(name)
             }
