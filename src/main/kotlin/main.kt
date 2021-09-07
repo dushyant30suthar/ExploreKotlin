@@ -26,14 +26,16 @@ object Application {
     * As inner classes are associated with outer class's object. Thus in the case of
     * object declaration there's just one instance of it throughout the lifetime
     * thus inner modifier would be redundant.*/
-    class InnerClassOfObject(val name: String) {
+    class InnerClassOfObject private constructor(val name: String) {
 
         /*
         * We can not make them inner as they would depend on outside context.
         *
         * Inner class would be the thing that we might want to use.*/
         object InnerObject {
-
+            fun create(name: String): InnerClassOfObject {
+                return InnerClassOfObject(name)
+            }
         }
 
     }
@@ -54,5 +56,9 @@ fun main() {
     * throughout lifetime */
     print(Application.describe(Application))
 
+    /*
+    * Error as we made constructor private for this example*/
     print(Application.InnerClassOfObject("Dushyant Suthar").name)
+
+    print(Application.InnerClassOfObject.InnerObject.create("Dushyant Suthar").name)
 }
