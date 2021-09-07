@@ -32,7 +32,7 @@ object Application {
         * We can not make them inner as they would depend on outside context.
         *
         * Inner class would be the thing that we might want to use.*/
-        object InnerObject {
+        companion object InnerObject {
             fun create(name: String): InnerClassOfObject {
                 return InnerClassOfObject(name)
             }
@@ -60,5 +60,7 @@ fun main() {
     * Error as we made constructor private for this example*/
     print(Application.InnerClassOfObject("Dushyant Suthar").name)
 
-    print(Application.InnerClassOfObject.InnerObject.create("Dushyant Suthar").name)
+    /*
+    * Now we can directly refer to factory method as reference to object becomes redundant.*/
+    print(Application.InnerClassOfObject.create("Dushyant Suthar").name)
 }
