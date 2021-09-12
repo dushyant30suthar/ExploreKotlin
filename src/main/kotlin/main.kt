@@ -7,6 +7,9 @@ val midPointPropOuter = object {
     val x = 5
 }
 
+/*
+* Objects are initialized lazily but object expressions are initialized just after their instance has
+* been created. */
 fun main(args: Array<String>) {
     /*
     * Object expression.*/
