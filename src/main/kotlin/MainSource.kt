@@ -55,7 +55,23 @@ fun main() {
     * predefined name "it". */
     aggregation("Something") { it.toString() }
 
+    /*
+    * You can also pass function as a lambda. This function is called anonymous function.
+    * it doesn't have a name but we have to specify return type of the function or else
+    * we can use = return whatever as we do in normal case in which type is inferred.
+    *
+    * We can hold this function into some parameter.
+    *
+    * Unlike lambdas anonymous functions can not be passed outside arguments. */
+    aggregation(values, fun(a: Int, b: Int): Int {
+        a * b
+        return a + b
+    })
+
     println(incrementOperation(10))
 
     println(valueAt2 { n -> n + 1 })
 }
+
+/*
+* Functional types or lambdas can access values of their closures. */
