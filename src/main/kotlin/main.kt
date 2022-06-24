@@ -14,7 +14,14 @@ fun main(args: Array<String>) {
 *
 * This puts some restrictions such as we can not store those parameters in some reference.
 * And those could not be passed to non-inline methods.*/
-inline fun someMethod(numbers: IntArray, condition: (Int) -> Boolean): Int {
+
+/*
+* We can not put nullable functional parameter in inline method.
+*
+* If we need to, then we need to add noinline keyword before variable name.
+*
+* It doesn't have any significance if inline method has no in-linable parameters*/
+inline fun someMethod(numbers: IntArray, noinline condition: ((Int) -> Boolean)?): Int {
     /*
     * We can not store condition parameter into some other reference
     *
