@@ -36,3 +36,26 @@ inline fun someMethod(numbers: IntArray, noinline condition: ((Int) -> Boolean)?
     }
     return -1
 }
+
+
+class Person() {
+
+    /*
+    * We can add inline to properties also and their accessors.*/
+    private inline var firstName: String
+        inline set(it) {
+            it
+        }
+        inline get() {
+            return "Dushyant"
+        }
+
+    /*
+    * You can also inline methods*/
+    inline fun someMethod() {
+        /*
+        * We can not access private properties in public inlines.*/
+        firstName = "Dushyant"
+    }
+
+}
