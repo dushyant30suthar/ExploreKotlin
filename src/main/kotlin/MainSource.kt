@@ -1,4 +1,8 @@
 /*
+* Higher order function is a function which takes or returns functions.*/
+
+
+/*
 * Functional types*/
 val sum: (Int, Int) -> Int = { a, b -> a + b }
 
